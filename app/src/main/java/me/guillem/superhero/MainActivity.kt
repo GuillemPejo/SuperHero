@@ -35,11 +35,10 @@ class MainActivity : AppCompatActivity() {
 
         rv_list = findViewById(R.id.rv_list)
 
-        cryptoList = ArrayList()
+        herolist = ArrayList()
         // Create adapter passing in the sample user data
         // Create adapter passing in the sample user data
-        adapter = rvAdapter(cryptoList)
-        // Attach the adapter to the recyclerview to populate items
+        adapter = Adapter(herolist)
         // Attach the adapter to the recyclerview to populate items
         rv_list.setAdapter(adapter)
     }
