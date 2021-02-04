@@ -1,4 +1,4 @@
-package me.guillem.superhero.model
+package me.guillem.superhero.retrofit.model
 
 data class Biography(
     val aliases: List<String>,
