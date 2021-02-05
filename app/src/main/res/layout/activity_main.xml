@@ -24,6 +24,8 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="Next"
+        android:background="@drawable/button_next"
+        android:backgroundTint="@color/white"
         android:layout_margin="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

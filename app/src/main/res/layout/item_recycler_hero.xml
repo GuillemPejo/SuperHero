@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_primary"
+    android:background="@color/darkblue"
     android:orientation="vertical"
     >
     <!--Top Header Layout-->
@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     app:cardCornerRadius="6dp"
-                    app:cardElevation="0dp">
+                    app:cardElevation="15dp">
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -72,8 +72,8 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
                                     android:text="Name SuperHero"
+                                    android:layout_gravity="center"
                                     android:id="@+id/name"
                                     android:textColor="@color/white"
                                     android:textSize="21sp"
@@ -103,83 +103,58 @@
                 </androidx.cardview.widget.CardView>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:id="@+id/info"
+                        android:layout_margin="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Information about hero" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:paddingBottom="10dp">
-
-                    <LinearLayout
+                    <TextView
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:id="@+id/race"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
+                        android:text="Race"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_weight="1"
                         android:gravity="center"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:padding="10dp" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="97%"
-                                android:layout_gravity="center"
-                                android:id="@+id/intelligence_txt"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
+                        android:padding="10dp"
+                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
+                        android:text="kg"
+                        android:id="@+id/weight"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_weight="1"
                         android:gravity="center"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:padding="10dp"
-                            android:src="@drawable/border_round" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="Genero"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
+                        android:padding="10dp"
+                        android:id="@+id/heigh"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cm"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -189,86 +164,31 @@
                     android:layout_marginTop="10dp"
                     android:paddingBottom="10dp">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <TextView
                         android:layout_weight="2"
                         android:gravity="center"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:padding="10dp"
-                            android:src="@drawable/border_round" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="97%"
-                                android:id="@+id/speed_txt"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
+                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="97%"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
                         android:layout_weight="2"
                         android:gravity="center"
-                        android:padding="8dp">
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="97%"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:padding="10dp"
- />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4.8/5"
-                                android:id="@+id/power_txt"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
 
                 </LinearLayout>
-            </LinearLayout>
-
-            <!--Option Bar-->
 
             </LinearLayout>
 
-
-
-
+        </LinearLayout>
 
     </ScrollView>
 

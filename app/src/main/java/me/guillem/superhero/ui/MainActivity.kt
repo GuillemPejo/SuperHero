@@ -1,6 +1,7 @@
 package me.guillem.superhero.ui
 
 import android.os.Bundle
+import android.text.TextUtils.lastIndexOf
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if (supportActionBar != null) {
+            supportActionBar?.hide()
+        }
 
         init_rv()
         getHero()
@@ -74,13 +79,27 @@ class MainActivity : AppCompatActivity() {
     private fun handleResponse(response: ProfileModel) {
 
             if (response.name.isNotEmpty()) {
-                if (response.biography.full_name.isEmpty()) response.biography.full_name = response.name
+                patchingNull(response)
                 Log.d("TESTING","NOM: ${response.name} WITH ID: ${response.id}")
                 myAdapter.setData(response, this)
                 rv_list.adapter = myAdapter
             }else{
                 getHero()
             }
+
+    }
+
+    private fun patchingNull(response: ProfileModel) {
+        if (response.biography.full_name.isEmpty()) response.biography.full_name = response.name
+        if (response.appearance.race == "null") response.appearance.race = "Unknown"
+        if (response.appearance.weight.last()=="0 kg" || response.appearance.height.last()=="0 cm" ) {
+            response.appearance.weight = listOf("Unknow")
+            response.appearance.height = listOf("Unknow")
+
+        }
+
+
+
 
     }
 

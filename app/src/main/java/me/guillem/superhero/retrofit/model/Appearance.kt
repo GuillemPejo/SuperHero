@@ -15,11 +15,11 @@ data class Appearance(
     val hair_color: String,
     @SerializedName("height")
     @Expose
-    val height: List<String>,
+    var height: List<String>,
     @SerializedName("race")
     @Expose
-    val race: String,
+    var race: String,
     @SerializedName("weight")
     @Expose
-    val weight: List<String>
+    var weight: List<String>
 )
