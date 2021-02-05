@@ -73,9 +73,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleResponse(response: ProfileModel) {
 
-
-            myAdapter.setData(response, this)
-            rv_list.adapter = myAdapter
+            if (response.name.isNotEmpty()) {
+                if (response.biography.full_name.isEmpty()) response.biography.full_name = response.name
+                Log.d("TESTING","NOM: ${response.name} WITH ID: ${response.id}")
+                myAdapter.setData(response, this)
+                rv_list.adapter = myAdapter
+            }else{
+                getHero()
+            }
 
     }
 
