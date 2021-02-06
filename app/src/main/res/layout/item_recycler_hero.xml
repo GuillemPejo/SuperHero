@@ -160,28 +160,110 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:paddingBottom="10dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal">
 
-                    <TextView
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:layout_gravity="center_vertical"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Speed"
+                            android:drawablePadding="5dp"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:drawableTopCompat="@drawable/speed" />
+
+                        <TextView
+                            android:id="@+id/speed"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:text="97%" />
+
+                    </LinearLayout>
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="97%"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:layout_gravity="center_vertical"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Strength"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:drawablePadding="5dp"
+                            app:drawableTopCompat="@drawable/strenght" />
+
+                        <TextView
+                            android:id="@+id/strength"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:text="97%" />
+
+                    </LinearLayout>
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="97%"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Intelligence"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:drawablePadding="5dp"
+                            app:drawableTopCompat="@drawable/intelligence" />
+
+                        <TextView
+                            android:id="@+id/intelligence"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+
+                            android:text="97%" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Power"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:drawablePadding="5dp"
+                            app:drawableTopCompat="@drawable/power" />
+
+                        <TextView
+                            android:id="@+id/power"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20dp"
+                            android:text="97%" />
+
+                    </LinearLayout>
 
 
                 </LinearLayout>

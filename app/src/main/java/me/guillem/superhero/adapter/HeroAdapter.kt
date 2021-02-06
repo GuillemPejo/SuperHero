@@ -42,6 +42,13 @@ class HeroAdapter: RecyclerView.Adapter<VH>() {
         holder.race.text = superheroList[position].appearance.race
 
 
+        holder.power.text = superheroList[position].powerstats.power
+        holder.strength.text = superheroList[position].powerstats.strength
+        holder.intelligence.text = superheroList[position].powerstats.intelligence
+        holder.speed.text = superheroList[position].powerstats.speed
+
+
+
 
         holder.gender.setImageResource(getGender(superheroList[position].appearance.gender))
         //holder.gender.text = superheroList[position].name
@@ -79,6 +86,12 @@ class VH(itemView: View) : RecyclerView.ViewHolder(itemView){
     val weight: TextView = itemView.findViewById(R.id.weight)
     val heigh: TextView = itemView.findViewById(R.id.heigh)
     val race: TextView = itemView.findViewById(R.id.race)
+
+    val speed: TextView = itemView.findViewById(R.id.speed)
+    val intelligence: TextView = itemView.findViewById(R.id.intelligence)
+    val strength: TextView = itemView.findViewById(R.id.strength)
+    val power: TextView = itemView.findViewById(R.id.power)
+
 
 
 
