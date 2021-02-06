@@ -5,8 +5,8 @@ import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import me.guillem.superhero.R
@@ -17,6 +17,8 @@ class HeroAdapter: RecyclerView.Adapter<VH>() {
     private var superheroList = emptyList<ProfileModel>()
     private lateinit var context: Context
     var intent: Intent? = null
+    var isEnable = false
+
 
 
 
@@ -46,6 +48,16 @@ class HeroAdapter: RecyclerView.Adapter<VH>() {
         holder.strength.text = superheroList[position].powerstats.strength
         holder.intelligence.text = superheroList[position].powerstats.intelligence
         holder.speed.text = superheroList[position].powerstats.speed
+
+        holder.star.setOnClickListener(View.OnClickListener {view ->
+            if (isEnable){
+                holder.star.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.star_click));
+            }else{
+                holder.star.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.star_noclick));
+            }
+            isEnable = !isEnable;
+
+        })
 
 
 
@@ -77,6 +89,8 @@ class HeroAdapter: RecyclerView.Adapter<VH>() {
 
 }
 
+
+
 class VH(itemView: View) : RecyclerView.ViewHolder(itemView){
     val name: TextView = itemView.findViewById(R.id.name)
     val real_name: TextView = itemView.findViewById(R.id.real_name)
@@ -91,6 +105,9 @@ class VH(itemView: View) : RecyclerView.ViewHolder(itemView){
     val intelligence: TextView = itemView.findViewById(R.id.intelligence)
     val strength: TextView = itemView.findViewById(R.id.strength)
     val power: TextView = itemView.findViewById(R.id.power)
+
+    val star: ImageButton = itemView.findViewById(R.id.star)
+
 
 
 

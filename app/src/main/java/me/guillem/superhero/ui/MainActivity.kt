@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         val rndm_num = (1..731).random()
         if(ServiceBuilder.isNetworkAvailable(this)){
                 compositeDisposable.add(
-                    ServiceBuilder.buildService().getHero(rndm_num.toString())
+                    ServiceBuilder.buildService().getHero("644")
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeOn(Schedulers.io())
                         .subscribe(this::handleResponse, this::handleError)

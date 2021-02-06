@@ -1,42 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkblue"
-    android:orientation="vertical"
-    >
-    <!--Top Header Layout-->
-
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="20dp"
-            android:paddingTop="10dp"
             android:paddingRight="20dp">
 
             <!--Top Profile Section -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="0dp"
                 android:background="@drawable/border_round"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="40dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     app:cardCornerRadius="6dp"
                     app:cardElevation="15dp">
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -55,49 +57,64 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:padding="10dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:orientation="vertical"
                             android:background="@drawable/gradient"
+                            android:orientation="vertical"
+                            android:padding="10dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            >
+                            app:layout_constraintStart_toStartOf="parent">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:orientation="horizontal">
+
                                 <TextView
+                                    android:id="@+id/name"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Name SuperHero"
                                     android:layout_gravity="center"
-                                    android:id="@+id/name"
+                                    android:text="Name SuperHero"
                                     android:textColor="@color/white"
                                     android:textSize="21sp"
                                     android:textStyle="bold" />
+
                                 <ImageView
                                     android:id="@+id/gender"
-                                    app:tint="@color/white"
-                                    android:layout_margin="10dp"
-                                    android:layout_gravity="center_vertical"
                                     android:layout_width="20dp"
-                                    android:layout_height="20dp"/>
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_margin="10dp"
+                                    app:tint="@color/white" />
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/real_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Real name"
                                 android:layout_gravity="center_horizontal"
-                                android:id="@+id/real_name"
+                                android:text="Real name"
                                 android:textColor="@color/white"
                                 android:textSize="14sp" />
 
 
                         </LinearLayout>
+
+
+
+                        <ImageButton
+                            android:id="@+id/star"
+                            android:layout_margin="10dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/star_noclick"
+                            android:background="@null"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -110,9 +127,9 @@
 
                     <TextView
                         android:id="@+id/info"
-                        android:layout_margin="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
                         android:text="Information about hero" />
                 </LinearLayout>
 
@@ -121,39 +138,44 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:paddingBottom="10dp">
+
                     <TextView
-                        android:layout_weight="1"
-                        android:padding="10dp"
                         android:id="@+id/race"
-                        android:gravity="center"
-                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/race"
+                        android:gravity="center"
+                        android:padding="10dp"
                         android:text="Race"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="kg"
                         android:id="@+id/weight"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:id="@+id/heigh"
-                        android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/weight"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="kg"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/heigh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/height"
+                        android:gravity="center"
+                        android:padding="10dp"
                         android:text="cm"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -163,105 +185,113 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:paddingBottom="10dp">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:layout_weight="1"
-                        android:gravity="center_horizontal">
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Speed"
                             android:drawablePadding="5dp"
+                            android:text="Speed"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:drawableTopCompat="@drawable/speed" />
 
                         <TextView
                             android:id="@+id/speed"
-                            android:gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20dp"
-                            android:text="97%" />
+                            android:gravity="center_horizontal"
+                            android:paddingTop="5dp"
+                            android:text="97%"
+                            android:textSize="20sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:layout_weight="1">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:drawablePadding="5dp"
                             android:text="Strength"
                             android:textSize="14sp"
                             android:textStyle="bold"
-                            android:drawablePadding="5dp"
                             app:drawableTopCompat="@drawable/strenght" />
 
                         <TextView
                             android:id="@+id/strength"
-                            android:gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20dp"
-                            android:text="97%" />
+                            android:gravity="center_horizontal"
+                            android:paddingTop="5dp"
+                            android:text="97%"
+                            android:textSize="20sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:layout_weight="1">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:drawablePadding="5dp"
                             android:text="Intelligence"
                             android:textSize="14sp"
                             android:textStyle="bold"
-                            android:drawablePadding="5dp"
                             app:drawableTopCompat="@drawable/intelligence" />
 
                         <TextView
                             android:id="@+id/intelligence"
-                            android:gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20dp"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="5dp"
 
-                            android:text="97%" />
+                            android:text="97%"
+                            android:textSize="20sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal"
-                        android:layout_weight="1">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:drawablePadding="5dp"
                             android:text="Power"
                             android:textSize="14sp"
                             android:textStyle="bold"
-                            android:drawablePadding="5dp"
                             app:drawableTopCompat="@drawable/power" />
 
                         <TextView
                             android:id="@+id/power"
-                            android:gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20dp"
-                            android:text="97%" />
+                            android:gravity="center_horizontal"
+                            android:paddingTop="5dp"
+                            android:text="97%"
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 
@@ -272,6 +302,8 @@
 
         </LinearLayout>
 
+
     </ScrollView>
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
